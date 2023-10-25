@@ -1,0 +1,18 @@
+<table mat-table [dataSource]="elenco">
+  <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+    <th mat-header-cell *matHeaderCellDef style="font-weight: 10px">{{ column | titlecase}}</th>
+    <td mat-cell *matCellDef="let element">
+      <ng-container *ngIf="column !== ' '; else actionColumn">
+        {{ getValue(element[column], column) }}
+      </ng-container>
+      <ng-template #actionColumn>
+        <ng-container *ngFor="let button of buttons">
+          <lib-icon-button [button]="button" [id]="element.id" style="margin-right: 10px;"></lib-icon-button>
+        </ng-container>
+      </ng-template>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

@@ -1,0 +1,12 @@
+<!--blocco if-->
+<button mat-mini-fab [color]="button.color" *ngIf="button.link !== ''; else methodButton" 
+    [routerLink]="button.link === '../modifica/' ? [button.link, id] : [button.link]">
+    <mat-icon>{{ button.icon }}</mat-icon>
+</button>
+<!--blocco else-->
+<ng-template #methodButton>
+    <button mat-mini-fab [color]="button.color" (click)="button.metodo(id)">
+        <mat-icon>{{ button.icon }}</mat-icon>
+    </button>
+</ng-template>
+
