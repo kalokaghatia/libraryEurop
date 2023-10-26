@@ -3,8 +3,6 @@
   "dest": "../../dist/europcar",
   "lib": {
     "entryFile": "src/public-api.ts"    
-  },
-  "assets": [
-    "./scss"
-   ]
+  }
+
 }

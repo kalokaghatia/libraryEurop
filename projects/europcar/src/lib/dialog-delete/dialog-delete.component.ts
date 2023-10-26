@@ -9,11 +9,13 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dial
 export class DialogDeleteComponent{
 
   constructor( @Inject(MAT_DIALOG_DATA) public data:any ){
-    this.elemento = this.data.messaggio;
+    this.tipoElemento = this.data.tipoElemento;
+    this.elemento = this.data.elemento;
     this.metodoDelete = this.data.method;
   }
 
 
+  tipoElemento:string;
   elemento:string;
 
   metodoDelete!:() => void;

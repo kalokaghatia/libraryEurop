@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import 'dist/europcar/scss/europcar-style.scss';
 
 @Injectable({
   providedIn: 'root',  
