@@ -12,8 +12,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/europcar/ng-package.json"
-          },
+            "project": "projects/europcar/ng-package.json"            
+          },          
           "configurations": {
             "production": {
               "tsConfig": "projects/europcar/tsconfig.lib.prod.json"

@@ -13,6 +13,10 @@ import { RouterModule } from '@angular/router';
 import { InputComponent } from './input/input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SnackbarService } from './snackbar/snackbar.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ButtonComponent,
     IconButtonComponent,
     TableComponent,
-    InputComponent
+    InputComponent,
+    DialogDeleteComponent
   ],
   imports: [
     CommonModule,
@@ -31,13 +36,19 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ReactiveFormsModule,
     MatFormFieldModule,
     FormsModule,
+    MatDialogModule,
+    MatSnackBarModule
   ],
   exports: [
     EuropcarComponent,
     ButtonComponent,
     IconButtonComponent,
     TableComponent,
-    InputComponent
+    InputComponent,
+    DialogDeleteComponent
+  ],
+  providers:[
+    SnackbarService
   ]
 })
 export class EuropcarModule { }
