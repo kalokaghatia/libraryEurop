@@ -12,7 +12,16 @@
       </ng-template>
     </td>
   </ng-container>
+  <!--footer-->
+  <ng-container *ngFor="let column of footertable">
+    <td mat-footer-cell *matFooterCellDef>
+      {{column}}
+    </td>
+  </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
+  <div *ngIf="footertable.length < 0">
+    <tr mat-footer-row *matFooterRowDef="footertable"></tr>
+  </div>
+  </table>

@@ -1,19 +1,33 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, forwardRef } from '@angular/core';
+import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'lib-input',
   templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css']
+  styleUrls: ['./input.component.css'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: InputComponent,
+      multi: true,
+    },
+  ],
 })
-export class InputComponent {
-  @Input()
-  public type: string = "";
-  @Input()
-  public name : string = "";
-  @Input()
-  public placeholder: string = "";
-  @Input()
-  public min: string = "";
-  @Input()
-  public max: string = "";
+export class InputComponent implements ControlValueAccessor {
+  @Input() formControl!: FormControl;
+  @Input() name:string="";
+  @Input() type:string="text";
+  onChange: any = () => {};
+  onTouched: any = () => {};
+  writeValue(input: any){
+    if (this.formControl) {
+      this.formControl.setValue(input);
+    }
+  }
+  registerOnChange(fn: any){
+    this.onChange = fn;
+  }
+  registerOnTouched(fn: any){
+    this.onTouched = fn;
+  }
 }

@@ -11,6 +11,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { InputComponent } from './input/input.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,9 @@ import { InputComponent } from './input/input.component';
     MatButtonModule,
     MatTableModule,
     RouterModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    FormsModule,
   ],
   exports: [
     EuropcarComponent,

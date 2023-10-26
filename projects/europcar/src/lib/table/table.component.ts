@@ -13,6 +13,8 @@ export class TableComponent {
   @Input()
   public buttons: { color: string, icon: string, metodo: (arg: number) => void, link: string }[] = [];
   
+  @Input() footertable:any[]=[];
+
   getValue(element: any, column: string): any {
     if (typeof element === 'object') {
       if (element && element.hasOwnProperty(column)) {
