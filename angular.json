@@ -31,6 +31,9 @@
             "polyfills": [
               "zone.js",
               "zone.js/testing"
+            ],
+            "styles": [
+              "projects/europcar/src/lib/europcar-style.scss"
             ]
           }
         }

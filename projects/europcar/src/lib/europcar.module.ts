@@ -11,6 +11,10 @@ import {MatButtonModule} from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { InputComponent } from './input/input.component';
+import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SnackbarService } from './snackbar/snackbar.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,8 @@ import { InputComponent } from './input/input.component';
     ButtonComponent,
     IconButtonComponent,
     TableComponent,
-    InputComponent
+    InputComponent,
+    DialogDeleteComponent
   ],
   imports: [
     CommonModule,
@@ -26,13 +31,19 @@ import { InputComponent } from './input/input.component';
     MatButtonModule,
     MatTableModule,
     RouterModule,
+    MatDialogModule,
+    MatSnackBarModule
   ],
   exports: [
     EuropcarComponent,
     ButtonComponent,
     IconButtonComponent,
     TableComponent,
-    InputComponent
+    InputComponent,
+    DialogDeleteComponent
+  ],
+  providers:[
+    SnackbarService
   ]
 })
 export class EuropcarModule { }
