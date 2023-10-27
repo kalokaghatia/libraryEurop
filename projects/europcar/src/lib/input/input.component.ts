@@ -8,7 +8,7 @@ import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/f
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: InputComponent,
+      useExisting: forwardRef(() => InputComponent),//metti solo InputComponent
       multi: true,
     },
   ],
@@ -19,10 +19,7 @@ export class InputComponent implements ControlValueAccessor {
   @Input() type:string="text";
   onChange: any = () => {};
   onTouched: any = () => {};
-  writeValue(input: any){
-    if (this.formControl) {
-      this.formControl.setValue(input);
-    }
+  writeValue(){
   }
   registerOnChange(fn: any){
     this.onChange = fn;

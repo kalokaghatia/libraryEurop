@@ -1,11 +1,8 @@
 <div>
-  <p><label for="{{name}}" style="margin-bottom: 0;">{{name}}</label></p>
-  <input type="{{type}}" id="{{name}}" [formControl]="formControl" (blur)="onTouched()" />
-</div>
-<div>
-  <p><label for="{{name}}" style="margin-bottom: 0;">{{name}}</label></p>
-  <input type="{{type}}" id="{{name}}" [formControl]="formControl" (blur)="onTouched()" />
-  <div *ngIf="formControl.invalid && (formControl.dirty || formControl.touched)" style="margin-top: 0;">
-    <p class="error-message">campo {{name}} non valido</p>
-  </div>
-</div>
+    <label for="{{name}}" style="margin-bottom: 0;">{{name}}</label>
+    <input type="{{type}}" id="{{name}}" [formControl]="formControl" (blur)="onTouched()" />
+    <div *ngIf="formControl.invalid && (formControl.dirty || formControl.touched)" style="margin-top: 0;">
+      <p class="error-message">Campo {{name}} non valido</p>
+    </div>
+ </div>
+  
